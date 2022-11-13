@@ -42,4 +42,11 @@ public class ContratServiceImp implements IContratService {
     public String deleteAllC() {
         contratRepository.deleteAll();
         return "deleted";    }
+    Contrat affectContratToEtudiant (Integer idContrat, nomE:String,prenomE:String)
+    {
+        Contrat Contrate = ContratRepository.findById(idContrat).get();
+        Etudiant Etudiante = etudiantRepository.findById(nomE).get();
+        Contrate.setEtudiant(Contrate);
+        contratRepository.save(Etudiante;
+    }
 }

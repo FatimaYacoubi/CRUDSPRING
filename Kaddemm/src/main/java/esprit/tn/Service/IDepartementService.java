@@ -10,4 +10,6 @@ public interface IDepartementService {
     public List<Departement> departement_List() ;
     public void update_departement(Departement e) ;
     public String deleteAllE();
+    public void assignEtudiantToDepartement (Long etudiantId, Integer
+            departementId) ;
 }

@@ -10,4 +10,6 @@ public interface IUniversiteService {
     public List<Universite> Universite_List() ;
     public void update_Universite(Universite e) ;
     public String deleteAllE();
+    public void assignUniversiteToDepartement(Integer idUniversite, Integer
+            idDepartement);
 }

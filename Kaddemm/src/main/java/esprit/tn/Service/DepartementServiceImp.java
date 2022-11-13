@@ -2,6 +2,8 @@ package esprit.tn.Service;
 
 import esprit.tn.Entity.Departement;
 import esprit.tn.Repository.DepartementRepository;
+import esprit.tn.Entity.Etudiant;
+import esprit.tn.Repository.EtudiantRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ import java.util.List;
 public class DepartementServiceImp implements IDepartementService{
     @Autowired
     DepartementRepository departementRepository;
+    @Autowired
+    EtudiantRepository etudiantRepository;
     public Integer ajouter_departement(Departement e)
     {
         departementRepository.save(e);
@@ -38,5 +42,11 @@ public class DepartementServiceImp implements IDepartementService{
         departementRepository.deleteAll();
         return "deleted";
     }
-
+    public void assignEtudiantToDepartement (Long etudiantId, Integer
+            departementId) {
+        Etudiant Etudiante = etudiantRepository.findById(idEtudiant).get();
+        Departement Departementd = departementRepository.findById(Departement).get();
+        Etudiant.setDepartement(Etudiante);
+        departementRepository.save(Departementd);
+    }
 }

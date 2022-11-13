@@ -8,4 +8,5 @@ public interface IContratService {
     public List<Contrat> contrat_List() ;
     public void update_contrat(Contrat e) ;
     public String deleteAllC();
+    Contrat affectContratToEtudiant (Integer idContrat, nomE:String,prenomE:String);
 }

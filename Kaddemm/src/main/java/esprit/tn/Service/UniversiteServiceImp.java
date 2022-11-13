@@ -38,6 +38,14 @@ public class UniversiteServiceImp implements IUniversiteService{
         UniversiteRepository.deleteAll();
         return "deleted";
     }
+    public void assignUniversiteToDepartement(Integer idUniversite, Integer
+            idDepartement)
+    {
+        Universite Universitee = UniversiteRepository.findById(idUniversite).get();
+        Departement Departementd = departementRepository.findById(Departement).get();
+        Universitee.setDepartement(Universitee);
+        departementRepository.save(Departementd);
+    }
 
 }
 
